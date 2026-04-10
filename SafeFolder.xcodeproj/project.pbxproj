@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0520143A7734710684B924FB /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0658A92EEFA4CF1C64067 /* AuthenticationView.swift */; };
+		0A19F87D9FE8042834A308D2 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43712D5B644C600F3D94A52E /* DocumentPicker.swift */; };
+		0E001EF739E532B6B9F32128 /* StoredFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA75F8EFA5F87F9E50691E /* StoredFile.swift */; };
+		10377C565DB26FC9B3B5CDA6 /* FileGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D009EA96822E5CEECD426F1 /* FileGridView.swift */; };
+		33F02A0EB0F5A4B13AB2AFE2 /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96F55CF6F521A10A80DFEA /* FolderDetailView.swift */; };
+		3753DA77235729A29AD3A8CB /* BiometricService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC47EED5F37463CCC7E3FB /* BiometricService.swift */; };
+		47C81D567DBEDDCE6A37EB67 /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DCFDEFDC351B2A24B0E05 /* FolderListView.swift */; };
+		7420C1C4C386A66BC7ADA537 /* FileThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F68BF8B53C81A565C21D /* FileThumbnailView.swift */; };
+		98E2F6D15A1B1E0ED9D26D9D /* FolderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325B2F37D82309EDE657C93 /* FolderListViewModel.swift */; };
+		B7465971356B61CBD3C506B7 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A7600CEF35070F07582F0E /* CreateFolderView.swift */; };
+		BE0BEBB57183D7C3597DC8B3 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7DF1AD32B27B9965C4119 /* Folder.swift */; };
+		C2DF45D98B704764FD2299C5 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341DCD9370149F27F91624E /* AppEnvironment.swift */; };
+		C99CAFE43FEBD610249F601A /* SafeFolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4124C77B4C9BF5C3DC7B391 /* SafeFolderApp.swift */; };
+		CA3643B74D8BFF999613759C /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138EDDC1B7202306F4D7BF97 /* AuthenticationViewModel.swift */; };
+		D030F5BD6475A57271B79646 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC674A1561C6CC7441796B2 /* ImagePicker.swift */; };
+		DE73C02BAF778409AC1853C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA769936954D61F4579EC206 /* Assets.xcassets */; };
+		E2EA80216864540CAF41C71D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71256E94B02138E32AFA6778 /* Constants.swift */; };
+		F1569236279FCEDA832A6E8D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F112DD1EBBFA48BBF6A29 /* StorageService.swift */; };
+		FA80B695A7C79E033D4A1E9E /* FolderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CF8C90CEC89DCDC767E2F /* FolderDetailViewModel.swift */; };
+		FCD1FD62B6007D06A7F58D45 /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3006F660A638EEF817A9CC5 /* SecurityService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		037CF8C90CEC89DCDC767E2F /* FolderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewModel.swift; sourceTree = "<group>"; };
+		138EDDC1B7202306F4D7BF97 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		2341DCD9370149F27F91624E /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		2D009EA96822E5CEECD426F1 /* FileGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGridView.swift; sourceTree = "<group>"; };
+		36DA75F8EFA5F87F9E50691E /* StoredFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredFile.swift; sourceTree = "<group>"; };
+		389F112DD1EBBFA48BBF6A29 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		3EA7DF1AD32B27B9965C4119 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		43712D5B644C600F3D94A52E /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		49C0658A92EEFA4CF1C64067 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		50F7F68BF8B53C81A565C21D /* FileThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileThumbnailView.swift; sourceTree = "<group>"; };
+		64A7600CEF35070F07582F0E /* CreateFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
+		6DC674A1561C6CC7441796B2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		71256E94B02138E32AFA6778 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A325B2F37D82309EDE657C93 /* FolderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewModel.swift; sourceTree = "<group>"; };
+		B6CC47EED5F37463CCC7E3FB /* BiometricService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricService.swift; sourceTree = "<group>"; };
+		C4124C77B4C9BF5C3DC7B391 /* SafeFolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeFolderApp.swift; sourceTree = "<group>"; };
+		CA769936954D61F4579EC206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD367F3100F327BF4C626ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E76DCFDEFDC351B2A24B0E05 /* FolderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
+		F277BF0BEAB7FE0ABE4F6429 /* SafeFolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeFolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3006F660A638EEF817A9CC5 /* SecurityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityService.swift; sourceTree = "<group>"; };
+		FA96F55CF6F521A10A80DFEA /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		04AE399CCD112C6ED8F28087 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EA7DF1AD32B27B9965C4119 /* Folder.swift */,
+				36DA75F8EFA5F87F9E50691E /* StoredFile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E532826E398E3A5C7713930 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				64A7600CEF35070F07582F0E /* CreateFolderView.swift */,
+				E76DCFDEFDC351B2A24B0E05 /* FolderListView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		29B1E5293DC5523C15C475C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA769936954D61F4579EC206 /* Assets.xcassets */,
+				CD367F3100F327BF4C626ABB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		382BAF9E4C9627ED5D550534 /* SafeFolder */ = {
+			isa = PBXGroup;
+			children = (
+				ECF7F7074CA8D9FEC7393802 /* App */,
+				04AE399CCD112C6ED8F28087 /* Models */,
+				29B1E5293DC5523C15C475C9 /* Resources */,
+				91C3D76AA95389A9E8AEB720 /* Services */,
+				EB5C14F208E86B700D44596B /* Utilities */,
+				4A92CDF8B0C3582EDF907AC5 /* ViewModels */,
+				739A5B8B3E25713C9D5AD329 /* Views */,
+			);
+			path = SafeFolder;
+			sourceTree = "<group>";
+		};
+		4A92CDF8B0C3582EDF907AC5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				138EDDC1B7202306F4D7BF97 /* AuthenticationViewModel.swift */,
+				037CF8C90CEC89DCDC767E2F /* FolderDetailViewModel.swift */,
+				A325B2F37D82309EDE657C93 /* FolderListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4DA687D44A5B00207D900EA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F277BF0BEAB7FE0ABE4F6429 /* SafeFolder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60829D34C6284FBC25ED7666 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				49C0658A92EEFA4CF1C64067 /* AuthenticationView.swift */,
+				50F7F68BF8B53C81A565C21D /* FileThumbnailView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		739A5B8B3E25713C9D5AD329 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60829D34C6284FBC25ED7666 /* Components */,
+				E9B2BF0EA6726687F544DF00 /* FolderDetail */,
+				1E532826E398E3A5C7713930 /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91C3D76AA95389A9E8AEB720 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B6CC47EED5F37463CCC7E3FB /* BiometricService.swift */,
+				F3006F660A638EEF817A9CC5 /* SecurityService.swift */,
+				389F112DD1EBBFA48BBF6A29 /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A28C52F42E8532575FB06F07 = {
+			isa = PBXGroup;
+			children = (
+				382BAF9E4C9627ED5D550534 /* SafeFolder */,
+				4DA687D44A5B00207D900EA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9B2BF0EA6726687F544DF00 /* FolderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2D009EA96822E5CEECD426F1 /* FileGridView.swift */,
+				FA96F55CF6F521A10A80DFEA /* FolderDetailView.swift */,
+			);
+			path = FolderDetail;
+			sourceTree = "<group>";
+		};
+		EB5C14F208E86B700D44596B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				71256E94B02138E32AFA6778 /* Constants.swift */,
+				43712D5B644C600F3D94A52E /* DocumentPicker.swift */,
+				6DC674A1561C6CC7441796B2 /* ImagePicker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ECF7F7074CA8D9FEC7393802 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2341DCD9370149F27F91624E /* AppEnvironment.swift */,
+				C4124C77B4C9BF5C3DC7B391 /* SafeFolderApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33EC7B96CA7F4CE1AA815439 /* SafeFolder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C5A45806275E00C4D271E0F /* Build configuration list for PBXNativeTarget "SafeFolder" */;
+			buildPhases = (
+				9FB2479B813B316FFC1F1276 /* Sources */,
+				4375520BFE4C41DF58DAEB30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafeFolder;
+			packageProductDependencies = (
+			);
+			productName = SafeFolder;
+			productReference = F277BF0BEAB7FE0ABE4F6429 /* SafeFolder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3289C8AB423A9B9070CE4D49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 4285009600C02AE3D14C0B80 /* Build configuration list for PBXProject "SafeFolder" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A28C52F42E8532575FB06F07;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4DA687D44A5B00207D900EA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33EC7B96CA7F4CE1AA815439 /* SafeFolder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4375520BFE4C41DF58DAEB30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE73C02BAF778409AC1853C3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FB2479B813B316FFC1F1276 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DF45D98B704764FD2299C5 /* AppEnvironment.swift in Sources */,
+				0520143A7734710684B924FB /* AuthenticationView.swift in Sources */,
+				CA3643B74D8BFF999613759C /* AuthenticationViewModel.swift in Sources */,
+				3753DA77235729A29AD3A8CB /* BiometricService.swift in Sources */,
+				E2EA80216864540CAF41C71D /* Constants.swift in Sources */,
+				B7465971356B61CBD3C506B7 /* CreateFolderView.swift in Sources */,
+				0A19F87D9FE8042834A308D2 /* DocumentPicker.swift in Sources */,
+				10377C565DB26FC9B3B5CDA6 /* FileGridView.swift in Sources */,
+				7420C1C4C386A66BC7ADA537 /* FileThumbnailView.swift in Sources */,
+				BE0BEBB57183D7C3597DC8B3 /* Folder.swift in Sources */,
+				33F02A0EB0F5A4B13AB2AFE2 /* FolderDetailView.swift in Sources */,
+				FA80B695A7C79E033D4A1E9E /* FolderDetailViewModel.swift in Sources */,
+				47C81D567DBEDDCE6A37EB67 /* FolderListView.swift in Sources */,
+				98E2F6D15A1B1E0ED9D26D9D /* FolderListViewModel.swift in Sources */,
+				D030F5BD6475A57271B79646 /* ImagePicker.swift in Sources */,
+				C99CAFE43FEBD610249F601A /* SafeFolderApp.swift in Sources */,
+				FCD1FD62B6007D06A7F58D45 /* SecurityService.swift in Sources */,
+				F1569236279FCEDA832A6E8D /* StorageService.swift in Sources */,
+				0E001EF739E532B6B9F32128 /* StoredFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0884270D56A2A60DAF8CD1FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DC8430E8C01A80D1242B187D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F6160C0F467B118783CCF69A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SafeFolder/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.safefolder.SafeFolder;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F9DE9E59C07EEF1FA30BA57A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SafeFolder/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.safefolder.SafeFolder;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C5A45806275E00C4D271E0F /* Build configuration list for PBXNativeTarget "SafeFolder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DE9E59C07EEF1FA30BA57A /* Debug */,
+				F6160C0F467B118783CCF69A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4285009600C02AE3D14C0B80 /* Build configuration list for PBXProject "SafeFolder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0884270D56A2A60DAF8CD1FD /* Debug */,
+				DC8430E8C01A80D1242B187D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3289C8AB423A9B9070CE4D49 /* Project object */;
+}
