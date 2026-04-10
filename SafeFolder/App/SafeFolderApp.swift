@@ -12,6 +12,9 @@ struct SafeFolderApp: App {
             FolderListView()
                 .environmentObject(appEnvironment)
                 .id(navigationId)
+                .onAppear {
+                    appEnvironment.resetAutoLockTimer()
+                }
                 .onChange(of: appEnvironment.isAppLocked) { isLocked in
                     if isLocked {
                         // Reset navigation by changing ID, popping to root.
@@ -19,9 +22,6 @@ struct SafeFolderApp: App {
                         appEnvironment.isAppLocked = false
                     }
                 }
-                .simultaneousGesture(TapGesture().onEnded {
-                    appEnvironment.resetAutoLockTimer()
-                })
         }
         .onChange(of: scenePhase) { phase in
             if phase == .background {

@@ -21,8 +21,7 @@ struct FolderDetailView: View {
         VStack {
             if folder.isSecure && !viewModel.isAuthenticated {
                 AuthenticationView(folder: folder) {
-                    viewModel.isAuthenticated = true
-                    viewModel.loadFiles()
+                    viewModel.unlockFolder()
                 }
             } else {
                 FileGridView(viewModel: viewModel)
@@ -32,10 +31,35 @@ struct FolderDetailView: View {
         .onAppear {
             viewModel.authenticateIfNeeded()
         }
+        .onTapGesture {
+            viewModel.resetAutoLockTimer()
+        }
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { _ in
+                    viewModel.resetAutoLockTimer()
+                }
+        )
+        .onDisappear {
+            viewModel.cancelAutoLockTimer()
+        }
+        .onChange(of: showingActionSheet) { isShowing in
+            if isShowing {
+                viewModel.resetAutoLockTimer()
+            }
+        }
+        .onChange(of: activeSheet) { sheet in
+            if sheet != nil {
+                viewModel.resetAutoLockTimer()
+            }
+        }
         .toolbar {
             if viewModel.isAuthenticated {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { showingActionSheet = true }) {
+                    Button(action: {
+                        viewModel.resetAutoLockTimer()
+                        showingActionSheet = true
+                    }) {
                         Image(systemName: "plus")
                     }
                 }

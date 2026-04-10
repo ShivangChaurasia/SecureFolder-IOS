@@ -6,6 +6,10 @@ struct AuthenticationView: View {
     
     @StateObject private var viewModel = AuthenticationViewModel()
     @FocusState private var isPasswordFieldFocused: Bool
+    private let biometricService = BiometricService()
+    private var biometricAvailabilityMessage: String? {
+        biometricService.availabilityMessage()
+    }
     
     var body: some View {
         VStack(spacing: 24) {
@@ -26,39 +30,50 @@ struct AuthenticationView: View {
                     .padding(.horizontal)
             }
             
-            if folder.authType == .password {
+            if folder.allowsPasswordAuth {
                 SecureField("Enter Password", text: $viewModel.passwordInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .focused($isPasswordFieldFocused)
                     .padding(.horizontal, 40)
                 
-                Button("Unlock") {
+                Button("Unlock With Password") {
                     viewModel.verifyPassword(for: folder.id) { success in
                         if success { onUnlock() }
                     }
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(viewModel.passwordInput.isEmpty)
-                
-            } else {
-                Button(action: {
-                    triggerBiometrics()
-                }) {
-                    HStack {
-                        Image(systemName: "faceid")
-                        Text("Use Face ID / Touch ID")
+            }
+
+            if folder.allowsBiometricAuth {
+                VStack(spacing: 12) {
+                    Button(action: {
+                        triggerBiometrics()
+                    }) {
+                        HStack {
+                            Image(systemName: biometricIconName)
+                            Text(biometricButtonTitle)
+                        }
                     }
+                    .buttonStyle(.borderedProminent)
                 }
-                .buttonStyle(.borderedProminent)
                 .padding(.top, 10)
+
+                if let biometricAvailabilityMessage {
+                    Text(biometricAvailabilityMessage)
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 24)
+                }
             }
             
             Spacer()
         }
         .onAppear {
-            if folder.authType == .password {
+            if folder.allowsPasswordAuth && !folder.allowsBiometricAuth {
                 isPasswordFieldFocused = true
-            } else if folder.authType == .biometric {
+            } else if folder.allowsBiometricAuth {
                 triggerBiometrics()
             }
         }
@@ -67,6 +82,28 @@ struct AuthenticationView: View {
     private func triggerBiometrics() {
         viewModel.triggerBiometricAuth { success in
             if success { onUnlock() }
+        }
+    }
+
+    private var biometricIconName: String {
+        switch biometricService.biometricType() {
+        case .faceID:
+            return "faceid"
+        case .touchID:
+            return "touchid"
+        case .none:
+            return "lock.shield"
+        }
+    }
+
+    private var biometricButtonTitle: String {
+        switch biometricService.biometricType() {
+        case .faceID:
+            return "Use Face ID"
+        case .touchID:
+            return "Use Touch ID"
+        case .none:
+            return "Use Biometrics"
         }
     }
 }

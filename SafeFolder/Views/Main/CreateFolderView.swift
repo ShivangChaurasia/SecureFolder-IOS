@@ -6,7 +6,8 @@ struct CreateFolderView: View {
     
     @State private var folderName = ""
     @State private var isSecure = false
-    @State private var authType: AuthType = .biometric
+    @State private var useBiometricAuth = true
+    @State private var usePasswordAuth = false
     @State private var password = ""
     
     var body: some View {
@@ -19,13 +20,10 @@ struct CreateFolderView: View {
                 
                 if isSecure {
                     Section(header: Text("Security Constraints")) {
-                        Picker("Authentication Method", selection: $authType) {
-                            Text("Face ID / Touch ID").tag(AuthType.biometric)
-                            Text("Custom Password").tag(AuthType.password)
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                        
-                        if authType == .password {
+                        Toggle("Allow Face ID / Touch ID", isOn: $useBiometricAuth)
+                        Toggle("Allow Folder Password", isOn: $usePasswordAuth)
+
+                        if usePasswordAuth {
                             SecureField("Create Password", text: $password)
                         }
                     }
@@ -38,16 +36,20 @@ struct CreateFolderView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") {
-                        if isSecure && authType == .password {
-                            viewModel.createFolder(name: folderName, isSecure: true, authType: .password, password: password)
-                        } else if isSecure {
-                            viewModel.createFolder(name: folderName, isSecure: true, authType: .biometric, password: nil)
-                        } else {
-                            viewModel.createFolder(name: folderName, isSecure: false, authType: nil, password: nil)
-                        }
+                        viewModel.createFolder(
+                            name: folderName,
+                            isSecure: isSecure,
+                            allowsBiometricAuth: useBiometricAuth,
+                            allowsPasswordAuth: usePasswordAuth,
+                            password: usePasswordAuth ? password : nil
+                        )
                         dismiss()
                     }
-                    .disabled(folderName.isEmpty || (isSecure && authType == .password && password.isEmpty))
+                    .disabled(
+                        folderName.isEmpty ||
+                        (isSecure && !useBiometricAuth && !usePasswordAuth) ||
+                        (isSecure && usePasswordAuth && password.isEmpty)
+                    )
                 }
             }
         }

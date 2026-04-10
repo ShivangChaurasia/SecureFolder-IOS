@@ -8,10 +8,10 @@ class AuthenticationViewModel: ObservableObject {
     private let biometricService = BiometricService()
     private let securityService = SecurityService.shared
     
-    // Call this if the folder has authType == .biometric upon appearing
     func triggerBiometricAuth(completion: @escaping (Bool) -> Void) {
         biometricService.authenticateWithBiometrics { success, errorMsg in
             if success {
+                self.errorMessage = nil
                 completion(true)
             } else {
                 self.errorMessage = errorMsg
@@ -20,10 +20,10 @@ class AuthenticationViewModel: ObservableObject {
         }
     }
     
-    // Call this if authType == .password when the user hits unlock
     func verifyPassword(for folderId: UUID, completion: @escaping (Bool) -> Void) {
         let success = securityService.verifyPassword(passwordInput, forFolderId: folderId)
         if success {
+            self.errorMessage = nil
             completion(true)
         } else {
             self.errorMessage = "Incorrect password"

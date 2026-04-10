@@ -11,10 +11,21 @@ class FolderListViewModel: ObservableObject {
         folders = storageService.loadFolders()
     }
     
-    func createFolder(name: String, isSecure: Bool, authType: AuthType?, password: String?) {
-        let newFolder = Folder(name: name, isSecure: isSecure, authType: authType)
+    func createFolder(
+        name: String,
+        isSecure: Bool,
+        allowsBiometricAuth: Bool,
+        allowsPasswordAuth: Bool,
+        password: String?
+    ) {
+        let newFolder = Folder(
+            name: name,
+            isSecure: isSecure,
+            allowsBiometricAuth: isSecure && allowsBiometricAuth,
+            allowsPasswordAuth: isSecure && allowsPasswordAuth
+        )
         
-        if isSecure && authType == .password, let pwd = password {
+        if isSecure && allowsPasswordAuth, let pwd = password {
             _ = securityService.savePassword(pwd, forFolderId: newFolder.id)
         }
         
@@ -26,7 +37,7 @@ class FolderListViewModel: ObservableObject {
         for index in offsets {
             let folder = folders[index]
             storageService.deleteFolderDirectory(for: folder.id)
-            if folder.isSecure && folder.authType == .password {
+            if folder.isSecure && folder.allowsPasswordAuth {
                 securityService.deletePassword(forFolderId: folder.id)
             }
         }
@@ -38,9 +49,11 @@ class FolderListViewModel: ObservableObject {
         if let index = folders.firstIndex(where: { $0.id == folder.id }) {
             folders[index].isSecure.toggle()
             if folders[index].isSecure {
-                folders[index].authType = .biometric 
+                folders[index].allowsBiometricAuth = true
+                folders[index].allowsPasswordAuth = false
             } else {
-                folders[index].authType = nil
+                folders[index].allowsBiometricAuth = false
+                folders[index].allowsPasswordAuth = false
                 securityService.deletePassword(forFolderId: folder.id)
             }
             storageService.saveFolders(folders)

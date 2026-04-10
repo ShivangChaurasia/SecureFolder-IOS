@@ -3,18 +3,24 @@ import SwiftUI
 struct FolderListView: View {
     @StateObject private var viewModel = FolderListViewModel()
     @State private var showingCreateForm = false
+    @State private var navigationPath = NavigationPath()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             List {
                 ForEach(viewModel.folders) { folder in
-                    NavigationLink(destination: FolderDetailView(folder: folder)) {
+                    Button {
+                        navigationPath.append(folder)
+                    } label: {
                         HStack {
                             Image(systemName: folder.isSecure ? "lock.fill" : "folder.fill")
                                 .foregroundColor(folder.isSecure ? .red : .blue)
                             Text(folder.name)
+                            Spacer()
                         }
                     }
+                    .buttonStyle(.plain)
+                    .contentShape(Rectangle())
                     .swipeActions(edge: .leading) {
                         Button {
                             viewModel.toggleSecurity(for: folder)
@@ -27,6 +33,9 @@ struct FolderListView: View {
                 .onDelete(perform: viewModel.deleteFolder)
             }
             .navigationTitle("Safe Folder")
+            .navigationDestination(for: Folder.self) { folder in
+                FolderDetailView(folder: folder)
+            }
             .toolbar {
                 Button(action: {
                     showingCreateForm = true

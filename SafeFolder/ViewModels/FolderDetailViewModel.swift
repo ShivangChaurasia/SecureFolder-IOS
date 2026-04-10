@@ -8,6 +8,7 @@ class FolderDetailViewModel: ObservableObject {
     
     let folder: Folder
     private let storageService = StorageService.shared
+    private var autoLockTimer: Timer?
     
     init(folder: Folder) {
         self.folder = folder
@@ -18,8 +19,19 @@ class FolderDetailViewModel: ObservableObject {
             isAuthenticated = true
             loadFiles()
         } else {
-            isAuthenticated = false
+            lockFolder()
         }
+    }
+
+    func unlockFolder() {
+        isAuthenticated = true
+        loadFiles()
+        resetAutoLockTimer()
+    }
+
+    func lockFolder() {
+        autoLockTimer?.invalidate()
+        isAuthenticated = false
     }
     
     func loadFiles() {
@@ -44,10 +56,30 @@ class FolderDetailViewModel: ObservableObject {
         if success {
             files.append(newFile)
             storageService.saveFilesMetadata(files, for: folder.id)
+            resetAutoLockTimer()
         }
     }
     
     func getFileURL(for file: StoredFile) -> URL {
         return storageService.getFileURL(folderId: folder.id, fileId: file.id, ext: file.fileExtension)
+    }
+
+    func resetAutoLockTimer() {
+        guard folder.isSecure, isAuthenticated else { return }
+
+        autoLockTimer?.invalidate()
+        autoLockTimer = Timer.scheduledTimer(withTimeInterval: Constants.Security.autoLockTimeout, repeats: false) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.lockFolder()
+            }
+        }
+    }
+
+    func cancelAutoLockTimer() {
+        autoLockTimer?.invalidate()
+    }
+
+    deinit {
+        autoLockTimer?.invalidate()
     }
 }
