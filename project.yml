@@ -1,0 +1,16 @@
+name: SafeFolder
+options:
+  bundleIdPrefix: com.safefolder
+targets:
+  SafeFolder:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - SafeFolder
+    info:
+      path: SafeFolder/Resources/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false

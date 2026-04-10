@@ -45,9 +45,9 @@ The app supports both standard (non-secure) folders for everyday files and secur
 
 This project strictly adheres to the **MVVM (Model-View-ViewModel)** architectural pattern to separate business logic from the user interface, improving testability and code maintainability.
 
-### Suggested Folder Structure
+### Project Folder Structure
 
-A well-organized structure keeps the project scalable. Here is how the project files should be arranged:
+A well-organized structure keeps the project scalable. Here is how the project files are arranged:
 
 ```text
 SafeFolder/
@@ -95,8 +95,10 @@ SafeFolder/
    git clone https://github.com/yourusername/SafeFolder-iOS.git
    cd SafeFolder-iOS
    ```
-2. **Open the project in Xcode:**
+2. **Generate and Open the Xcode Project:**
+   This project uses [XcodeGen](https://github.com/yonaskolb/XcodeGen) to generate the project file. Ensure you have it installed (e.g., `brew install xcodegen`).
    ```bash
+   xcodegen generate
    open SafeFolder.xcodeproj
    ```
 3. **Configure Code Signing:**
