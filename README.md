@@ -12,6 +12,26 @@ The app supports both standard (non-secure) folders for everyday files and secur
 
 ---
 
+## 📸 Screenshots
+
+<details>
+<summary><b>Click to View App Screenshots</b></summary>
+
+<p align="center">
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.45.06.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.45.11.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.05.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.13.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.17.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.22.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.29.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.33.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.38.png" width="200" />
+  <img src="UI%20Images%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-11%20at%2012.46.48.png" width="200" />
+</p>
+</details>
+
+---
 ## ✨ Features
 
 - **Folder Management**: Create, delete, and manage both secure and non-secure folders.
