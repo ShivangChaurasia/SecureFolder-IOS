@@ -17,7 +17,7 @@ The app supports both standard (non-secure) folders for everyday files and secur
 - **Folder Management**: Create, delete, and manage both secure and non-secure folders.
 - **Convert Folders**: Seamlessly convert folders back and forth between secure and non-secure states.
 - **Robust Security**:
-  - **Biometric Authentication**: Integration with `LocalAuthentication` for Face ID & Touch ID.
+  - **Dual Authentication Vectors**: Folders can be secured with *both* Biometrics (Face ID/Touch ID) and Custom Folder Passwords concurrently.
   - **Keychain Storage**: Cryptographically secure storage for folder passwords.
   - **Auto-Lock Mechanism**: Folders automatically lock after 15 seconds of inactivity.
   - **App Lifecycle Awareness**: Secure folders lock instantly when the app goes into the background.
@@ -42,6 +42,15 @@ The app supports both standard (non-secure) folders for everyday files and secur
 ---
 
 ## 🏗 Architecture & Structural Approach
+
+### Approach & Priorities
+
+When designing and building Safe Folder, the development roadmap was strictly guided by the following priorities:
+
+1. **Security & Privacy First**: Zero third-party analytics or external database dependencies. All files and credentials never leave the iOS sandbox.
+2. **Native iOS Best Practices**: Leveraging Apple's first-party frameworks like `LocalAuthentication` and `Keychain Services` seamlessly without external libraries to maintain maximum compatibility.
+3. **Seamless User Experience**: Ensuring restrictive security features (like the 15-second Auto-Lock and Background App obscuring) feel organic and perfectly mimic native OS behaviors.
+4. **Scalable Clean Architecture**: Modularizing all core logic into isolated `Services` and `ViewModels` to ensure future logic additions (e.g., Cloud Backups) require zero rewriting of the UI or model layers.
 
 This project strictly adheres to the **MVVM (Model-View-ViewModel)** architectural pattern to separate business logic from the user interface, improving testability and code maintainability.
 
